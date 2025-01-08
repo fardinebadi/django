@@ -1,0 +1,38 @@
+{% load compress %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% compress css %}
+    <link rel="stylesheet" href="{% static 'src/output.css' %}">
+    {% endcompress %}
+
+
+
+</head>
+
+<body class="container bg-slate-500">
+    <header>
+        <div class=" mx-auto h-auto flex gap-32 pt-8">
+
+            <a class="mx-4 text-white text-3xl " href="http://127.0.0.1:8000/admin_add/"> users</a>
+            <a class="mx-4 text-white text-3xl " href="http://127.0.0.1:8000/category/">category</a>
+            <a class="mx-4 text-white text-3xl " href="http://127.0.0.1:8000/showproduct/">product</a>
+        </div>
+        <main class="flex flex-row-reverse gap-24">
+            <div class="w-[1400x]">
+                <img src="../static/img/Group 16.png" alt="">
+            </div>
+            <div class="pt-48">
+                <p class="text-6xl text-white w-[400px] h-[400px] mx-16 pt-28"> welcome to my shoping</p>
+            </div>
+        </main>
+    </header>
+
+</body>
+
+</html>

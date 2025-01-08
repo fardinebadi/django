@@ -1,0 +1,91 @@
+{% load compress %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% compress css %}
+    <link rel="stylesheet" href="{% static 'src/output.css' %}">
+    {% endcompress %}
+
+
+
+</head>
+
+<body class="container bg-slate-500">
+
+    <header>
+        <div class=" w-full h-auto flex gap-[500px] pt-8 justify-center">
+
+            <a class="mx-4 text-white text-3xl " href="http://127.0.0.1:8000/showproduct/">
+                < </a>
+                    <a class="mx-4 text-white text-3xl " href="http://127.0.0.1:8000/category/">category</a>
+          
+
+        </div>
+
+    </header>
+    
+
+
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg pt-32 mx-auto px-28">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+           
+            
+            
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        id
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Price
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        category
+                    </th>
+
+
+                    
+
+                </tr>
+            </thead>
+            <tbody>
+            {% for i in info_list %}
+                <tr
+                    class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        {{  i.id  }}
+                    </th>
+                    <td class="px-6 py-4">
+                        {{  i.name_product  }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{  i.product_price  }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{  i.product_category }}
+                    </td>
+                    
+                    
+            
+                </tr>
+            {% endfor %}
+              
+                
+                
+            </tbody>
+        </table>
+    </div>
+
+    </div>
+
+</body>
+
+</html>
